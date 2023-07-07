@@ -1,0 +1,59 @@
+.challenges-container {
+  text-align: center;
+  margin-top: 30px;
+  background-image: url('https://images.hdqwalls.com/wallpapers/thumb/hogwarts-legacy-8k-cl.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+h2 {
+  color: #ff4081;
+  margin-bottom: 20px; /* Add a bottom margin to create space between heading and button */
+}
+
+.refresh-button {
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Add a bottom margin to create space between button and table */
+}
+
+.refresh-button:hover {
+  background-color: #f50057;
+}
+
+.table-container {
+  overflow: auto; /* Add both horizontal and vertical scrollbars if needed */
+  max-height: 300px; /* Adjust the desired height */
+}
+
+.challenges-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #ff4081;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tbody tr:hover {
+  background-color: #fce4ec;
+}

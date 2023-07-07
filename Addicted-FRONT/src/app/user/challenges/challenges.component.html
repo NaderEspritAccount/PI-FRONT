@@ -1,0 +1,26 @@
+<div class="challenges-container">
+  <h2>Challenges</h2>
+  <!-- <button class="refresh-button" (click)="refreshData()">Refresh</button> -->
+  <div class="table-container">
+    <table class="challenges-table">
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Description</th>
+          <th>Date Start</th>
+          <th>Date End</th>
+          <th>Difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let challenge of challenges">
+          <td>{{ challenge.game }}</td>
+          <td>{{ challenge.description }}</td>
+          <td>{{ challenge.dateStart | date }}</td>
+          <td>{{ challenge.dateEnd | date }}</td>
+          <td>{{ challenge.difficulty }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
