@@ -45,6 +45,7 @@ export class AddpostComponent {
         response => {
           // Handle the response from the backend
           console.log(response);
+          this.matDialogRef.close(); 
         },
         error => {
           // Handle any errors that occur during the HTTP request

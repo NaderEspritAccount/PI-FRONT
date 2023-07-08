@@ -66,6 +66,25 @@ export class PostComponent implements OnInit {
     });
   }
   openPostForm() {
-    const dialogRef = this._matDialog.open(AddpostComponent);
-  }
+    const dialogRef = this._matDialog.open(AddpostComponent)
+    dialogRef.afterClosed().subscribe((result) => {
+      this.postservice.getpostes().subscribe(
+        (done: any[]) => {
+          for (let element of done) {
+            this.postservice
+              .downloadMediaFromUser(element.id_image)
+              .subscribe((res) => {
+                const objectURL = URL.createObjectURL(res);
+                element.id_image =
+                  this.sanitizer.bypassSecurityTrustUrl(objectURL);
+                this.posts.push(element);
+                console.log(element);
+              });
+          }
+        },
+        (error: any) => {
+          // Handle error here
+        }
+      );
+    });  }
 }
