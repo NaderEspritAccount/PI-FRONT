@@ -1,45 +1,64 @@
-.container{
+.container {
     display: flex;
     flex-direction: row;
+
 }
+
+.imgDesc {
+    max-width: 600px;
+    width: 100%;
+
+}
+
+.img-fix {
+    width: 600px;
+
+
+}
+
 .outer-container {
-    width: 300px; /* Set the desired width */
-    height: 300px; /* Set the desired height */
-    overflow: auto; /* Enable scrolling for the outer container */
-  }
-  
-  .inner-container {
+    width: 300px;
+    /* Set the desired width */
+    height: 300px;
+    /* Set the desired height */
+    overflow: auto;
+    /* Enable scrolling for the outer container */
+}
+
+.inner-container {
     /* Set the desired width and height for the inner container */
     width: 100%;
     height: 100%;
-  }
+}
+
 .tip {
     width: 0px;
     height: 0px;
     position: absolute;
     background: transparent;
     border: 10px solid #ccc;
-  }
-  
-  .tip-up {
-    top: -25px; /* Same as body margin top + border */
+}
+
+.tip-up {
+    top: -25px;
+    /* Same as body margin top + border */
     left: 10px;
     border-right-color: transparent;
     border-left-color: transparent;
     border-top-color: transparent;
-  }
-  
-  .tip-down {
+}
+
+.tip-down {
     bottom: -25px;
     left: 10px;
     border-right-color: transparent;
     border-left-color: transparent;
-    border-bottom-color: transparent;  
-  }
-  
-  
-  
-  .dialogbox .body {
+    border-bottom-color: transparent;
+}
+
+
+
+.dialogbox .body {
     position: relative;
     max-width: 300px;
     height: auto;
@@ -48,13 +67,61 @@
     background-color: #DADADA;
     border-radius: 3px;
     border: 5px solid #ccc;
-  }
-  
-  .body .message {
+}
+
+.body .message {
     min-height: 30px;
     border-radius: 3px;
     font-family: Arial;
     font-size: 14px;
     line-height: 1.5;
     color: #797979;
-  }
+}
+
+.row {
+    max-width: 284px;
+    margin-left: 10px;
+    margin-bottom: 12px;
+
+}
+
+
+
+textarea {
+    width: 100%;
+    border: none;
+    background: #E8E8E8;
+    padding: 5px 10px;
+    height: 50%;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid #016BA8;
+    transition: all 0.5s;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+button.primaryContained {
+    background: #016ba8;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    margin-top: 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+    transition: 1s all;
+    font-size: 10px;
+    border-radius: 5px;
+}
+
+button.primaryContained:hover {
+    background: #9201A8;
+}
+
+.like-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

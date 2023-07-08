@@ -33,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './user/post/post.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DetailPostComponent } from './user/post/details/detail-post.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { DetailPostComponent } from './user/post/details/detail-post.component';
     DetailPostComponent,
   ],
   imports: [
+    FormsModule,
     MatDialogModule,
     BrowserModule,
     NgbModule,

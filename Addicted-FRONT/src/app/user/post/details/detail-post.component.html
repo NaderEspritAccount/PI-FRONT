@@ -1,106 +1,55 @@
 <div class="confirm-container">
   <h1 mat-dialog-title>{{ data.title }}</h1>
   <div mat-dialog-content class="container">
-    <div>
-      <img src="https://picsum.photos/id/20/600/300" />
+    <div class="imgDesc">
+      <img class="img-fix" [src]="data.id_image" />
 
       <p>{{ data.description }}</p>
+
+      <div class="like-container">
+        <button [disabled]="likeEnable" (click)="like()">
+          {{ data.nbrlike }} like
+        </button>
+        <button [disabled]="dislikeEnable" (click)="dislike()">
+          {{ data.nbrdlike }} dislike
+        </button>
+      </div>
     </div>
     <div>
-      <div class="dialogbox">
-        <div class="body">
-          <span class="tip tip-up"></span>
-          <div class="message">
-            <span
-              >I just made a comment about this comment box which is purely made
-              from CSS.</span
-            >
-          </div>
-        </div>
-        <div>add commment</div>
+      <!-- End row -->
+      <div class="row">
+        <textarea
+          [(ngModel)]="comment"
+          type="text"
+          class="input"
+          placeholder="Write a comment"
+          v-model="newItem"
+        ></textarea>
+        <button
+          (click)="addItem()"
+          class="primaryContained float-right"
+          type="submit"
+        >
+          Add Comment
+        </button>
       </div>
+      <!--End Row -->
+      <!--End Container -->
       <div class="outer-container">
         <div class="inner-container">
-          <!-- Content goes here -->
-
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              <div class="message">
-                <span
-                  >I just made a comment about this comment box which is purely
-                  made from CSS.</span
-                >
+          <ng-container *ngFor="let comment of data.comments">
+            <!-- Content goes here -->
+            <div class="dialogbox">
+              <div class="body">
+                <span class="tip tip-up"></span>
+                <div class="message">
+                  <span>{{ comment.description }}</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              <div class="message">
-                <span
-                  >I just made a comment about this comment box which is purely
-                  made from CSS.</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              <div class="message">
-                <span
-                  >I just made a comment about this comment box which is purely
-                  made from CSS.</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              <div class="message">
-                <span
-                  >I just made a comment about this comment box which is purely
-                  made from CSS.</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              <div class="message">
-                <span
-                  >I just made a comment about this comment box which is purely
-                  made from CSS.</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              <div class="message">
-                <span
-                  >I just made a comment about this comment box which is purely
-                  made from CSS.</span
-                >
-              </div>
-            </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>
-  </div>
-
-  <div mat-dialog-actions style="float: right; margin: 20px">
-    <button mat-button [mat-dialog-close]="{ clicked: 'Ok' }">Ok</button>
-    <button mat-button [mat-dialog-close]="{ clicked: 'Cancel' }">
-      Cancel
-    </button>
   </div>
 </div>

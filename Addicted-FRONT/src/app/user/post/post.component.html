@@ -6,11 +6,15 @@
   <div class="content">
     <ng-container *ngFor="let post of posts; let i = index">
       <div (click)="openDetail(post)" class="card">
-        <img src="https://picsum.photos/id/20/600/300" />
+        <img [src]="post.id_image" />
         <h2>{{ post.title }}</h2>
         <p>
           {{ post.description }}
         </p>
+        <div class="like-container">
+          <div>{{ post.nbrlike }} likes</div>
+          <div>{{ post.nbrdlike }} dislikes</div>
+        </div>
       </div>
     </ng-container>
   </div>
