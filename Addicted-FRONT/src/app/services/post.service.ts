@@ -38,4 +38,5 @@ export class PostService {
       responseType: 'blob',
     });
   }
+
 }

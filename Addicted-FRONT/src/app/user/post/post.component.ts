@@ -4,6 +4,7 @@ import { Post } from 'src/app/model/post';
 import { PostService } from 'src/app/services/post.service';
 import { DetailPostComponent } from './details/detail-post.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AddpostComponent } from './addpost/addpost.component';
 
 @Component({
   selector: 'app-post',
@@ -63,5 +64,8 @@ export class PostComponent implements OnInit {
         }
       );
     });
+  }
+  openPostForm() {
+    const dialogRef = this._matDialog.open(AddpostComponent);
   }
 }

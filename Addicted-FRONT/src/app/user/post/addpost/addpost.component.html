@@ -1,0 +1,29 @@
+<div>
+    <h2>Add New Post</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" formControlName="title" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" formControlName="description" required>
+      </div>
+      <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+        <ngx-dropzone-label>
+            <div>
+                <h2>My custom dropzone</h2>
+            </div>
+        </ngx-dropzone-label>
+        <ngx-dropzone-image-preview  ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+            <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+        </ngx-dropzone-image-preview>
+    </div>
+      
+      <div>
+        <button type="submit" [disabled]="myForm.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+  

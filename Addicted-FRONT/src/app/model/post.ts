@@ -1,8 +1,6 @@
 export class Post{
-    id : number;
-    name : string;
-    email : string;
-    password :string;
-    role:String;
-    enabled:boolean;
+
+    description:string;
+    title:string;
+    id_image:string;
   }
