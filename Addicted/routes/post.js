@@ -2,10 +2,32 @@ var express = require("express");
 const Post = require("../models/post");
 var router = express.Router();
 
+// GET route to retrieve all posts
+router.get("/", async (req, res, next) => {
+  try {
+    const posts = await Post.find();
+    console.log("test", posts);
+
+    res.json(posts);
+  } catch (error) {
+    res.json({ message: error.message, error });
+  }
+});
+
 // POST route to add a new post
 router.post("/addpost", async (req, res, next) => {
   try {
-    const { id_post, description, enabled, id_user, id_image, nbrlike, nbrdlike, enablelike, enabdislike} = req.body;
+    const {
+      id_post,
+      description,
+      enabled,
+      id_user,
+      id_image,
+      nbrlike,
+      nbrdlike,
+      enablelike,
+      enabdislike,
+    } = req.body;
 
     const post = new Post({
       id_post,
@@ -17,21 +39,10 @@ router.post("/addpost", async (req, res, next) => {
       nbrdlike,
       enablelike,
       enabdislike,
-
     });
 
     await post.save();
     res.json({ post });
-  } catch (error) {
-    res.json({ message: error.message, error });
-  }
-});
-
-// GET route to retrieve all posts
-router.get("/", async (req, res, next) => {
-  try {
-    const posts = await Post.find();
-    res.json({ posts });
   } catch (error) {
     res.json({ message: error.message, error });
   }
@@ -60,8 +71,6 @@ router.patch("/:id", async (req, res) => {
     res.json({ message: error.message, error });
   }
 });
-
-
 
 // testing the add like function
 
@@ -94,6 +103,5 @@ router.patch("/updateLike/:id_post", async (req, res, next) => {
     res.status(400).json({ message: error.message, error });
   }
 });
-
 
 module.exports = router;
