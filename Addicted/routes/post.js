@@ -1,6 +1,8 @@
 var express = require("express");
 const Post = require("../models/post");
 var router = express.Router();
+const storage = require("../middleware/storage");
+
 
 // GET route to retrieve all posts
 router.get("/", async (req, res, next) => {
@@ -15,9 +17,12 @@ router.get("/", async (req, res, next) => {
 });
 
 // POST route to add a new post
-router.post("/addpost", async (req, res) => {
+router.post("/addpost",storage.upload_file("id_image"),  async (req, res) => {
+
   try {
     let data = req.body;
+    data.id_image = req.file.filename;
+    console.log(req.file.filename);
     const post = new Post(data);
 
     await post.save();
