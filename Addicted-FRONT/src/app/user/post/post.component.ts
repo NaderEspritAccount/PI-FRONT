@@ -27,8 +27,8 @@ export class PostComponent implements OnInit {
   }
 
   openDetail(post: any) {
-    this._matDialog.open(DetailPostComponent, {
-      data: '',
-    });
+    const dialogRef = this._matDialog.open(DetailPostComponent, {
+      data: post,
+  });
   }
 }

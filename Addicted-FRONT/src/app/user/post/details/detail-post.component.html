@@ -1,8 +1,106 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+<div class="confirm-container">
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+  <div mat-dialog-content class="container">
+    <div>
+      <img src="https://picsum.photos/id/20/600/300" />
+
+      <p>{{ data.description }}</p>
+    </div>
+    <div>
+      <div class="dialogbox">
+        <div class="body">
+          <span class="tip tip-up"></span>
+          <div class="message">
+            <span
+              >I just made a comment about this comment box which is purely made
+              from CSS.</span
+            >
+          </div>
+        </div>
+        <div>add commment</div>
+      </div>
+      <div class="outer-container">
+        <div class="inner-container">
+          <!-- Content goes here -->
+
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+                <span
+                  >I just made a comment about this comment box which is purely
+                  made from CSS.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+                <span
+                  >I just made a comment about this comment box which is purely
+                  made from CSS.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+                <span
+                  >I just made a comment about this comment box which is purely
+                  made from CSS.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+                <span
+                  >I just made a comment about this comment box which is purely
+                  made from CSS.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+                <span
+                  >I just made a comment about this comment box which is purely
+                  made from CSS.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+                <span
+                  >I just made a comment about this comment box which is purely
+                  made from CSS.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div mat-dialog-actions style="float: right; margin: 20px">
+    <button mat-button [mat-dialog-close]="{ clicked: 'Ok' }">Ok</button>
+    <button mat-button [mat-dialog-close]="{ clicked: 'Cancel' }">
+      Cancel
+    </button>
+  </div>
 </div>

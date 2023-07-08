@@ -70,7 +70,8 @@ import { DetailPostComponent } from './user/post/details/detail-post.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [MatDialogModule],
+  exports: [MatDialogModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

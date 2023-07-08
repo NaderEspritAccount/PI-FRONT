@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-detail-post',
@@ -7,7 +7,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./detail-post.component.less'],
 })
 export class DetailPostComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data) {
+  constructor(
+    public matDialogRef: MatDialogRef<DetailPostComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
     console.log(data);
   }
   onNoClick(): void {}
