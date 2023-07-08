@@ -25,5 +25,6 @@ export class PostService {
   addPost(postData: any) {
     return this.http.post('http://localhost:5000/posts/addpost', postData);
   }
-  
+
+
 }

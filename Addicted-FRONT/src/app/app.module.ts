@@ -33,6 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './user/post/post.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DetailPostComponent } from './user/post/details/detail-post.component';
+import { AddpostComponent } from './user/post/addpost/addpost.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -61,13 +64,16 @@ import { DetailPostComponent } from './user/post/details/detail-post.component';
     OldpageComponent,
     PostComponent,
     DetailPostComponent,
+    AddpostComponent,
   ],
   imports: [
     MatDialogModule,
+    NgxDropzoneModule,
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [MatDialogModule],
