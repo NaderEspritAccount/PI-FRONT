@@ -31,6 +31,8 @@ import { AppRoutingModule } from './user/routes/app-routes.module';
 import { OldpageComponent } from './user/oldpage/oldpage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './user/post/post.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DetailPostComponent } from './user/post/details/detail-post.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +60,10 @@ import { PostComponent } from './user/post/post.component';
     ChallengesComponent,
     OldpageComponent,
     PostComponent,
+    DetailPostComponent,
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
@@ -67,6 +71,6 @@ import { PostComponent } from './user/post/post.component';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

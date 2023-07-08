@@ -15,31 +15,10 @@ router.get("/", async (req, res, next) => {
 });
 
 // POST route to add a new post
-router.post("/addpost", async (req, res, next) => {
+router.post("/addpost", async (req, res) => {
   try {
-    const {
-      id_post,
-      description,
-      enabled,
-      id_user,
-      id_image,
-      nbrlike,
-      nbrdlike,
-      enablelike,
-      enabdislike,
-    } = req.body;
-
-    const post = new Post({
-      id_post,
-      description,
-      enabled,
-      id_user,
-      id_image,
-      nbrlike,
-      nbrdlike,
-      enablelike,
-      enabdislike,
-    });
+    let data = req.body;
+    const post = new Post(data);
 
     await post.save();
     res.json({ post });

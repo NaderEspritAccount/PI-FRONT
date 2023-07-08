@@ -9,13 +9,13 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
   getpostes(): Observable<any[]> {
-    return this.http.get<any[]>(`http://localhost:5000/posts/`)
+    return this.http.get<any[]>(`http://localhost:5000/posts`)
       
   }
 
   getpost()
   {
-    return this.http.get('http://localhost:5000/posts/');
+    return this.http.get('http://localhost:5000/posts');
   }
 
   // addPost(postData: any) {

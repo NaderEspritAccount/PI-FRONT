@@ -12,6 +12,7 @@ const mongoose =require("mongoose");
 const postSchema = new mongoose.Schema({
     id_post:String,
     description:String,
+    title:String,
     enabled:Boolean,
     createdAt:Date,
     updatedAt:Date,

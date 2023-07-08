@@ -1,0 +1,43 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0rem;
+  padding: 1rem;
+}
+
+.card {
+  cursor: pointer !important;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 2rem;
+  background: #f8f3e8;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  margin: 8px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600/300;
+}
+
+.card > h2 {
+  margin-top: 1rem;
+  font-family: "Kalam", cursive;
+  font-weight: normal;
+  font-size: 2rem;
+  color: #4a4a7d;
+  text-align: center;
+}
+
+.card > p {
+  font-family: "Kalam", cursive;
+  font-size: 1rem;
+  color: #5e5e89;
+  text-align: center;
+}

@@ -1,9 +1,17 @@
-<p>post works!</p>
-<div *ngFor="let item of post">
-    <h2>{{ item.name }}</h2>
-    <p>Email: {{ item.email }}</p>
-    <p>Password: {{ item.password }}</p>
-    <p>Role: {{ item.role }}</p>
-    <p>Enabled: {{ item.enabled }}</p>
+<div class="container">
+  <div>
+    <div style="margin: 8px; padding: 1rem">Add Post</div>
   </div>
-  
+
+  <div class="content">
+    <ng-container *ngFor="let post of posts; let i = index">
+      <div (click)="openDetail(post)" class="card">
+        <img src="https://picsum.photos/id/20/600/300" />
+        <h2>{{ post.title }}</h2>
+        <p>
+          {{ post.description }}
+        </p>
+      </div>
+    </ng-container>
+  </div>
+</div>
