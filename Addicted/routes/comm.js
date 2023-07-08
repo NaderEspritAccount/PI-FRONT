@@ -22,11 +22,12 @@ router.post("/addcomm", async (req, res, next) => {
       description,
       id_post,
     });
+
     po.comments.push(comm);
     po.save();
-    const comments = await Comm.findAll();
+    const comms = await Comm.find({id_post:id_post});
     await comm.save();
-    res.status(200).json(comments);
+    res.status(200).json(comms);
   } catch (error) {
     res.status(400).json({ message: error.message, error });
   }
